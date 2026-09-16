@@ -1,0 +1,240 @@
+﻿@page "/"
+@using LifeMissionModels.Models
+@using LifeMissionModels.Database
+@using LifeMissionModels.Enums
+@using LifeMissionServices.Services
+@inject LifeMissionServices.Services.QuestGeneratorService QuestGenerator
+@rendermode InteractiveServer
+
+<div class="app">
+    <div class="topbar">
+        <div class="brand">
+            <svg viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="17" stroke="#C9972A" stroke-width="1.5" />
+                <path d="M20 8 L23 19 L20 32 L17 19 Z" fill="#C9972A" />
+                <circle cx="20" cy="20" r="2.2" fill="#ECE2C6" />
+            </svg>
+            <div>
+                <span class="eyebrow">Quest Log</span>
+                <h1>Le sentier de ta mission</h1>
+            </div>
+        </div>
+        <div class="stats">
+            <div>
+                <div class="xp-track"><div class="xp-fill" style="width:@(XpInLevel)%"></div></div>
+                <div class="xp-label">@XpInLevel / 100 XP</div>
+            </div>
+            <div class="level-badge">Niveau @Level</div>
+        </div>
+    </div>
+
+    <div class="mission-box">
+        <label>Ta mission actuelle</label>
+        <div class="mission-row">
+            <textarea rows="2" @bind="MissionInput" @bind:event="oninput"></textarea>
+            <button class="regen-btn" @onclick="RegenerateAsync" disabled="@IsLoading">
+                @(IsLoading ? "Le guide trace le sentier…" : "Redécouper en étapes")
+            </button>
+        </div>
+        @if (ErrorMessage is not null)
+        {
+            <div class="error-note">@ErrorMessage</div>
+        }
+    </div>
+
+    <div class="trail-wrap" style="height:@(TrailHeight)px; opacity:@(IsLoading ? "0.35" : "1")">
+        <svg class="trail-svg" viewBox="0 0 340 @TrailHeight" width="100%" height="@TrailHeight">
+            <path d="@TrailPathD" class="@(Quests.Any(q => q.Status == QuestStatus.Done) ? "lit" : "")" />
+        </svg>
+
+        @for (int i = 0; i < Quests.Count; i++)
+        {
+            var quest = Quests[i];
+            var point = TrailPoints[i];
+            var index = i;
+            <div class="node @StatusClass(quest.Status)"
+                 style="left:@((point.x / 340 * 100).ToString(System.Globalization.CultureInfo.InvariantCulture))%; top:@(point.y)px"
+                @onclick="() => OpenDetail(quest)">
+                <div class="ring"></div>
+                <div class="glyph">@Glyph(quest, index)</div>
+                <div class="caption">@quest.Title</div>
+            </div>
+        }
+    </div>
+
+    <footer class="hint">Touche une étape du sentier pour l'ouvrir. Termine les actions pour libérer la suivante.</footer>
+</div>
+
+@if (SelectedQuest is not null)
+{
+    <div class="backdrop show" @onclick="CloseDetail"></div>
+    <aside class="detail-panel show">
+        <button class="close-btn" @onclick="CloseDetail">✕</button>
+        <span class="eyebrow">@(SelectedQuest.Status == QuestStatus.Done ? "Étape accomplie" : "Étape en cours")</span>
+        <h2>@SelectedQuest.Title</h2>
+        <div class="xp-chip">+@SelectedQuest.Xp XP</div>
+        <p class="desc">@SelectedQuest.Desc</p>
+        <ul class="subtasks">
+            @foreach (var sub in SelectedQuest.Subtasks)
+            {
+                <li class="@(sub.Done ? "checked" : "")" @onclick="() => ToggleSubtask(SelectedQuest, sub)">
+                    <div class="checkbox">@(sub.Done ? "✓" : "")</div>
+                    <span class="txt">@sub.Text</span>
+                </li>
+            }
+        </ul>
+        <div class="status-note">
+            @(SelectedQuest.Status == QuestStatus.Done
+                ? "Toutes les actions sont bouclées. L'étape suivante est ouverte."
+                : "Coche chaque action au fur et à mesure.")
+        </div>
+    </aside>
+}
+
+@code {
+    private List<QuestModel> Quests = new();
+    private QuestModel? SelectedQuest;
+    private string MissionInput = "Aider les gens à mieux comprendre et gérer leur argent";
+    private bool IsLoading;
+    private string? ErrorMessage;
+
+    private const int StepH = 150;
+    private const int Amp = 90;
+
+    private int TrailHeight => StepH * Math.Max(Quests.Count - 1, 0) + 90;
+    private List<(double x, double y)> TrailPoints => BuildTrailPoints();
+    private string TrailPathD => BuildTrailPath();
+
+    private int TotalXp => Quests.Where(q => q.Status == QuestStatus.Done).Sum(q => q.Xp);
+    private int Level => TotalXp / 100 + 1;
+    private int XpInLevel => TotalXp % 100;
+
+    protected override void OnInitialized()
+    {
+        Quests = BuildTemplateQuests(MissionInput);
+    }
+
+    private async Task RegenerateAsync()
+    {
+        DatabaseFunctions.ImportJsonFile("./Data/Imports/Mission_Forme_Test.json");
+
+        if (string.IsNullOrWhiteSpace(MissionInput)) return;
+
+        IsLoading = true;
+        ErrorMessage = null;
+        SelectedQuest = null;
+        StateHasChanged();
+
+        try
+        {
+            Quests = await QuestGenerator.GenerateAsync(MissionInput);
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = "Échec de la génération — réessaie dans un instant.";
+            Console.Error.WriteLine(ex);
+        }
+        finally
+        {
+            IsLoading = false;
+        }
+    }
+
+    private void OpenDetail(QuestModel quest)
+    {
+        if (quest.Status == QuestStatus.Locked) return;
+        SelectedQuest = quest;
+    }
+
+    private void CloseDetail() => SelectedQuest = null;
+
+    private void ToggleSubtask(QuestModel quest, SubTaskModel sub)
+    {
+        sub.Done = !sub.Done;
+        CheckCompletion(quest);
+    }
+
+    private void CheckCompletion(QuestModel quest)
+    {
+        var allDone = quest.Subtasks.All(s => s.Done);
+        var idx = Quests.IndexOf(quest);
+
+        if (allDone && quest.Status != QuestStatus.Done)
+        {
+            quest.Status = QuestStatus.Done;
+            if (idx + 1 < Quests.Count && Quests[idx + 1].Status == QuestStatus.Locked)
+                Quests[idx + 1].Status = QuestStatus.Active;
+        }
+        else if (!allDone && quest.Status == QuestStatus.Done)
+        {
+            quest.Status = QuestStatus.Active;
+        }
+    }
+
+    private string StatusClass(QuestStatus status) => status switch
+    {
+        QuestStatus.Done => "done",
+        QuestStatus.Active => "active",
+        _ => "locked"
+    };
+
+    private string Glyph(QuestModel quest, int index) => quest.Status switch
+    {
+        QuestStatus.Done => "✓",
+        QuestStatus.Locked => "🔒",
+        _ => (index + 1).ToString("D2")
+    };
+
+    private List<(double x, double y)> BuildTrailPoints()
+    {
+        var points = new List<(double x, double y)> { (170, 40) };
+        for (int i = 1; i < Quests.Count; i++)
+        {
+            var y = 40 + StepH * i;
+            var x = 170 + (i % 2 == 0 ? Amp : -Amp);
+            points.Add((x, y));
+        }
+        return points;
+    }
+
+    private string BuildTrailPath()
+    {
+        var points = BuildTrailPoints();
+        if (points.Count == 0) return "";
+
+        var d = "M 170 40";
+        for (int i = 1; i < points.Count; i++)
+        {
+            var prevY = points[i - 1].y;
+            var y = points[i].y;
+            var x = points[i].x;
+            var cy1 = prevY + StepH * 0.5;
+            var cy2 = y - StepH * 0.5;
+            d += $" C 170 {cy1}, {x} {cy2}, {x} {y}";
+        }
+        return d;
+    }
+
+    private List<QuestModel> BuildTemplateQuests(string mission)
+    {
+        var templates = new (string Title, int Xp, string Focus, string[] Subtasks)[]
+        {
+            ("Explorer", 20, "Poser les bases", new[] { "Note 3 façons dont ta mission pourrait prendre forme", "Repère une personne qui vit déjà quelque chose de proche", "Écris ce qui t'attire vraiment là-dedans" }),
+            ("Apprendre", 25, "Se donner les moyens", new[] { "Identifie la compétence qui te manque le plus", "Trouve une ressource concrète pour la travailler", "Passe 30 minutes dessus" }),
+            ("Créer", 30, "Passer à l'action", new[] { "Fabrique une première version simple, même imparfaite", "Montre-la à une personne de confiance", "Note ce que tu changerais" }),
+            ("Partager", 30, "Sortir du silence", new[] { "Publie ou présente ce que tu as créé", "Réponds à un retour ou une question dessus", "Remercie une personne qui t'a aidé en chemin" }),
+            ("Consolider", 35, "Ancrer l'habitude", new[] { "Répète l'action qui a le mieux marché", "Simplifie une étape devenue inutilement compliquée", "Fixe la prochaine échéance" }),
+            ("Transmettre", 40, "Faire grandir", new[] { "Explique ta démarche à quelqu'un qui débute", "Écris ce que tu ferais différemment aujourd'hui", "Choisis la prochaine mission à ouvrir" })
+        };
+
+        return templates.Select((t, i) => new QuestModel
+        {
+            QuestId = $"q{i}",
+            Title = t.Title,
+            Xp = t.Xp,
+            Desc = $"« {t.Focus} » — une étape vers : {mission}",
+            Subtasks = t.Subtasks.Select(s => new SubTaskModel { Text = s }).ToList(),
+            Status = i == 0 ? QuestStatus.Active : QuestStatus.Locked
+        }).ToList();
+    }
+}

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../SharedProjectDatabase/SharedProjectDatabase/SharedProjectDatabase.csproj" />
+  <Project Path="LifeMission/LifeMission.csproj" />
+  <Project Path="LifeMissionModels/LifeMissionModels.csproj" />
+  <Project Path="LifeMissionServices/LifeMissionServices.csproj" />
+</Solution>

@@ -1,0 +1,662 @@
+[
+    {
+        "Theme": "Force_01",
+        "Name": "Musculation",
+        "Sentiers": [
+            {
+                "Title": "Repérage forme",
+                "Xp": 15,
+                "Description": "Tu évalues ton niveau physique actuel pour savoir d'où tu pars.",
+                "Subtasks": [
+                    "Faire un test simple (pompes, squats, gainage chronométré)",
+                    "Noter ton poids et tes mensurations de départ",
+                    "Identifier 2 zones du corps à renforcer en priorité"
+                ]
+            },
+            {
+                "Title": "Équipement",
+                "Xp": 20,
+                "Description": "Tu prépares ton espace et ton matériel pour t'entraîner sans excuse.",
+                "Subtasks": [
+                    "Choisir un lieu d'entraînement (salle, maison, extérieur)",
+                    "Réserver 3 créneaux fixes dans la semaine",
+                    "Préparer une tenue et un tapis ou des poids de base"
+                ]
+            },
+            {
+                "Title": "Première série",
+                "Xp": 25,
+                "Description": "Tu lances ton premier cycle d'entraînement structuré.",
+                "Subtasks": [
+                    "Suivre une séance complète full-body",
+                    "Noter les charges ou répétitions réalisées",
+                    "Étirer les muscles sollicités après la séance"
+                ]
+            },
+            {
+                "Title": "Charge progressive",
+                "Xp": 30,
+                "Description": "Tu augmentes l'intensité pour continuer à progresser sans stagner.",
+                "Subtasks": [
+                    "Augmenter les charges ou répétitions d'une séance sur deux",
+                    "Ajouter un exercice ciblant ta zone faible",
+                    "Planifier un jour de repos actif dans la semaine"
+                ]
+            },
+            {
+                "Title": "Force stabilisée",
+                "Xp": 35,
+                "Description": "Tu consolides ta force et rends l'entraînement automatique dans ton quotidien.",
+                "Subtasks": [
+                    "Comparer tes performances du mois à celles du départ",
+                    "Tenir 4 semaines consécutives sans interruption",
+                    "Réajuster ton programme selon tes points faibles restants"
+                ]
+            },
+            {
+                "Title": "Transmission",
+                "Xp": 40,
+                "Description": "Tu partages ta méthode pour motiver quelqu'un à se lancer.",
+                "Subtasks": [
+                    "Écrire ton programme type sur une fiche simple",
+                    "Encadrer une séance avec un proche débutant",
+                    "Fixer ton objectif de force pour les prochains mois"
+                ]
+            }
+        ]
+    },
+    {
+        "Theme": "Force_02",
+        "Name": "Course",
+        "Sentiers": [
+            {
+                "Title": "Repérage souffle",
+                "Xp": 15,
+                "Description": "Tu mesures ton niveau cardio actuel pour construire une base réaliste.",
+                "Subtasks": [
+                    "Courir 15 minutes à allure confortable et noter la distance",
+                    "Repérer un parcours plat près de chez toi",
+                    "Noter ta fréquence cardiaque ou ton essoufflement ressenti"
+                ]
+            },
+            {
+                "Title": "Rythme d'entrée",
+                "Xp": 20,
+                "Description": "Tu installes une routine de course légère et régulière.",
+                "Subtasks": [
+                    "Planifier 2 sorties courtes dans la semaine",
+                    "Choisir des chaussures adaptées à la course",
+                    "Alterner marche et course sur chaque sortie"
+                ]
+            },
+            {
+                "Title": "Premier objectif",
+                "Xp": 25,
+                "Description": "Tu vises une distance ou durée précise pour progresser.",
+                "Subtasks": [
+                    "Courir sans arrêt pendant 20 minutes",
+                    "Noter ton temps et ta sensation d'effort",
+                    "Ajouter une séance de récupération active"
+                ]
+            },
+            {
+                "Title": "Allure maîtrisée",
+                "Xp": 30,
+                "Description": "Tu structures ton entraînement pour gagner en endurance et en vitesse.",
+                "Subtasks": [
+                    "Introduire une séance de fractionné léger",
+                    "Augmenter la distance d'une sortie longue chaque semaine",
+                    "Adapter ton alimentation avant et après l'effort"
+                ]
+            },
+            {
+                "Title": "Endurance solide",
+                "Xp": 35,
+                "Description": "Tu consolides ta capacité à tenir l'effort sur la durée.",
+                "Subtasks": [
+                    "Comparer ta distance ou ton temps du mois à celui du départ",
+                    "Courir un parcours plus long ou vallonné",
+                    "Réinvestir ton énergie retrouvée dans un défi personnel"
+                ]
+            },
+            {
+                "Title": "TransName",
+                "Xp": 40,
+                "Description": "Tu partages ta progression pour motiver un proche à courir.",
+                "Subtasks": [
+                    "Écrire les étapes clés de ta progression",
+                    "Accompagner un proche sur sa première sortie",
+                    "Fixer ton prochain objectif de course (distance ou temps)"
+                ]
+            }
+        ]
+    },
+    {
+        "Theme": "Force_03",
+        "Name": "Calisthénie",
+        "Sentiers": [
+            {
+                "Title": "Repérage corps",
+                "Xp": 15,
+                "Description": "Tu testes tes capacités actuelles au poids du corps pour fixer une base.",
+                "Subtasks": [
+                    "Réaliser un maximum de pompes et de squats en une série",
+                    "Tester une position de gainage chronométrée",
+                    "Noter tes points forts et tes limites actuelles"
+                ]
+            },
+            {
+                "Title": "Base technique",
+                "Xp": 20,
+                "Description": "Tu apprends les mouvements fondamentaux avec la bonne exécution.",
+                "Subtasks": [
+                    "Regarder un tutoriel pour corriger ta posture de pompe et squat",
+                    "Pratiquer 3 exercices de base à faible intensité",
+                    "Filmer une série pour vérifier ta technique"
+                ]
+            },
+            {
+                "Title": "Premier circuit",
+                "Xp": 25,
+                "Description": "Tu enchaînes tes premiers mouvements en circuit complet.",
+                "Subtasks": [
+                    "Réaliser un circuit de 4 exercices sans matériel",
+                    "Chronométrer le temps total de ton circuit",
+                    "Noter ta récupération entre les séries"
+                ]
+            },
+            {
+                "Title": "Progression contrôlée",
+                "Xp": 30,
+                "Description": "Tu complexifies les mouvements pour continuer à progresser.",
+                "Subtasks": [
+                    "Introduire une variante plus difficile d'un exercice de base",
+                    "Augmenter le nombre de répétitions par série",
+                    "Ajouter un jour de mobilité pour éviter les blessures"
+                ]
+            },
+            {
+                "Title": "Maîtrise du corps",
+                "Xp": 35,
+                "Description": "Tu consolides ta force et ta technique sur les mouvements au poids du corps.",
+                "Subtasks": [
+                    "Réussir un mouvement plus avancé (traction, pompe surélevée)",
+                    "Comparer tes performances du mois à celles du départ",
+                    "Tenir ton circuit complet sans pause supplémentaire"
+                ]
+            },
+            {
+                "Title": "TransName",
+                "Xp": 40,
+                "Description": "Tu partages ta méthode pour aider un proche à démarrer la calisthénie.",
+                "Subtasks": [
+                    "Créer une fiche simple de ton circuit type",
+                    "Coacher un proche sur les mouvements de base",
+                    "Fixer ton prochain défi technique"
+                ]
+            }
+        ]
+    },
+    {
+        "Theme": "Force_04",
+        "Name": "Mobilité",
+        "Sentiers": [
+            {
+                "Title": "Repérage raideurs",
+                "Xp": 15,
+                "Description": "Tu identifies les zones de ton corps les plus raides ou limitées.",
+                "Subtasks": [
+                    "Tester la souplesse de tes ischios, hanches et épaules",
+                    "Noter les mouvements du quotidien qui te gênent",
+                    "Repérer les zones douloureuses après une séance de sport"
+                ]
+            },
+            {
+                "Title": "Routine douce",
+                "Xp": 20,
+                "Description": "Tu installes une pratique régulière d'étirements ciblés.",
+                "Subtasks": [
+                    "Choisir 5 étirements adaptés à tes zones raides",
+                    "Fixer un créneau quotidien de 10 minutes",
+                    "Préparer un tapis ou espace dédié à la routine"
+                ]
+            },
+            {
+                "Title": "Première amplitude",
+                "Xp": 25,
+                "Description": "Tu observes les premiers gains de souplesse concrets.",
+                "Subtasks": [
+                    "Tenir chaque étirement 30 secondes sans forcer",
+                    "Refaire le test de souplesse initial pour comparer",
+                    "Noter les mouvements devenus plus faciles"
+                ]
+            },
+            {
+                "Title": "Mobilité active",
+                "Xp": 30,
+                "Description": "Tu intègres la mobilité à tes autres activités physiques.",
+                "Subtasks": [
+                    "Ajouter un échauffement mobilité avant chaque séance de sport",
+                    "Introduire des exercices dynamiques (rotations, fentes)",
+                    "Ajuster ta routine selon les zones encore limitées"
+                ]
+            },
+            {
+                "Title": "Corps souple",
+                "Xp": 35,
+                "Description": "Tu consolides une mobilité durable qui protège ton corps à l'effort.",
+                "Subtasks": [
+                    "Comparer ton amplitude du mois à celle du départ",
+                    "Réaliser un mouvement auparavant inaccessible (pont, grand écart facial)",
+                    "Réinvestir cette mobilité dans tes autres entraînements"
+                ]
+            },
+            {
+                "Title": "TransName",
+                "Xp": 40,
+                "Description": "Tu partages ta routine pour aider un proche à retrouver de la souplesse.",
+                "Subtasks": [
+                    "Écrire ta routine d'étirements type",
+                    "Montrer 3 étirements clés à un proche",
+                    "Fixer ton prochain objectif de mobilité"
+                ]
+            }
+        ]
+    },
+    {
+        "Theme": "Force_05",
+        "Name": "Nutrition sport",
+        "Sentiers": [
+            {
+                "Title": "Repérage assiette",
+                "Xp": 15,
+                "Description": "Tu observes ton alimentation actuelle par rapport à ton effort physique.",
+                "Subtasks": [
+                    "Noter tes repas pendant 3 jours",
+                    "Identifier la part de protéines dans chaque repas",
+                    "Repérer les repas pris trop près ou trop loin de l'entraînement"
+                ]
+            },
+            {
+                "Title": "Bases solides",
+                "Xp": 20,
+                "Description": "Tu ajustes ta cuisine pour soutenir tes objectifs physiques.",
+                "Subtasks": [
+                    "Ajouter une source de protéines à chaque repas",
+                    "Faire une liste de courses adaptée à tes séances",
+                    "Préparer une collation simple pré ou post-effort"
+                ]
+            },
+            {
+                "Title": "Premier ajustement",
+                "Xp": 25,
+                "Description": "Tu testes un changement concret sur une semaine d'entraînement.",
+                "Subtasks": [
+                    "Manger un repas équilibré dans l'heure suivant l'effort",
+                    "Remplacer une collation transformée par une option maison",
+                    "Noter ton niveau d'énergie pendant les séances"
+                ]
+            },
+            {
+                "Title": "Rythme alimentaire",
+                "Xp": 30,
+                "Description": "Tu structures tes repas autour de ton planning sportif.",
+                "Subtasks": [
+                    "Planifier tes repas de la semaine selon tes séances",
+                    "Ajuster tes portions selon l'intensité de l'entraînement",
+                    "Gérer un repas extérieur sans dérailler ton objectif"
+                ]
+            },
+            {
+                "Title": "Énergie stable",
+                "Xp": 35,
+                "Description": "Tu consolides une alimentation qui soutient durablement ta performance.",
+                "Subtasks": [
+                    "Comparer ton énergie à l'effort du mois à celle du départ",
+                    "Tenir ta routine alimentaire lors d'une semaine chargée",
+                    "Réinvestir cette énergie dans une séance plus intense"
+                ]
+            },
+            {
+                "Title": "TransName",
+                "Xp": 40,
+                "Description": "Tu partages tes repères pour aider un proche à mieux manger pour le sport.",
+                "Subtasks": [
+                    "Écrire 3 exemples de repas types",
+                    "Préparer un repas sportif partagé avec un proche",
+                    "Définir ta règle alimentaire pour la suite"
+                ]
+            }
+        ]
+    },
+    {
+        "Theme": "Force_06",
+        "Name": "Routine matin",
+        "Sentiers": [
+            {
+                "Title": "Repérage matin",
+                "Xp": 15,
+                "Description": "Tu observes tes matinées actuelles pour repérer le temps perdu ou disponible.",
+                "Subtasks": [
+                    "Noter ton heure de réveil réelle pendant une semaine",
+                    "Identifier ce qui retarde ta première activité physique",
+                    "Repérer un créneau de 15 minutes disponible le matin"
+                ]
+            },
+            {
+                "Title": "Rituel simple",
+                "Xp": 20,
+                "Description": "Tu poses les bases d'une routine matinale physique légère.",
+                "Subtasks": [
+                    "Préparer ta tenue de sport la veille au soir",
+                    "Fixer une heure de réveil fixe",
+                    "Choisir 3 exercices simples à faire au réveil"
+                ]
+            },
+            {
+                "Title": "Premier essai",
+                "Xp": 25,
+                "Description": "Tu testes ta routine matinale sur plusieurs jours consécutifs.",
+                "Subtasks": [
+                    "Réaliser ta routine matinale 3 jours de suite",
+                    "Noter ton énergie en début de journée",
+                    "Ajuster l'heure si la routine est trop difficile à tenir"
+                ]
+            },
+            {
+                "Title": "Discipline ancrée",
+                "Xp": 30,
+                "Description": "Tu transformes la routine en habitude stable et automatique.",
+                "Subtasks": [
+                    "Tenir la routine 5 jours sur 7 pendant deux semaines",
+                    "Gérer un réveil difficile sans sauter la routine",
+                    "Ajouter un exercice supplémentaire à ta routine"
+                ]
+            },
+            {
+                "Title": "Matin puissant",
+                "Xp": 35,
+                "Description": "Tu consolides une discipline matinale qui structure toute ta journée.",
+                "Subtasks": [
+                    "Comparer ton énergie du mois à celle du départ",
+                    "Tenir la routine malgré un déplacement ou imprévu",
+                    "Réinvestir cette énergie matinale dans un projet personnel"
+                ]
+            },
+            {
+                "Title": "TransName",
+                "Xp": 40,
+                "Description": "Tu partages ta routine pour aider un proche à se discipliner le matin.",
+                "Subtasks": [
+                    "Écrire les étapes de ta routine matinale",
+                    "Inviter un proche à essayer ta routine une semaine",
+                    "Fixer ta version enrichie pour la suite"
+                ]
+            }
+        ]
+    },
+    {
+        "Theme": "Force_07",
+        "Name": "Natation",
+        "Sentiers": [
+            {
+                "Title": "Repérage bassin",
+                "Xp": 15,
+                "Description": "Tu évalues ton niveau actuel en natation pour fixer une base de départ.",
+                "Subtasks": [
+                    "Nager 100m sans arrêt et chronométrer ton temps",
+                    "Identifier la nage la plus confortable pour toi",
+                    "Repérer une piscine accessible avec des horaires adaptés"
+                ]
+            },
+            {
+                "Title": "技nique de base",
+                "Xp": 20,
+                "Description": "Tu travailles ta technique pour nager plus efficacement.",
+                "Subtasks": [
+                    "Travailler ta respiration sur 2 longueurs",
+                    "Corriger ta position de corps avec des exercices simples",
+                    "Planifier 2 séances piscine dans la semaine"
+                ]
+            },
+            {
+                "Title": "Premier objectif",
+                "Xp": 25,
+                "Description": "Tu fixes une distance ou un temps précis à atteindre.",
+                "Subtasks": [
+                    "Nager 500m sans interruption",
+                    "Noter ton ressenti d'effort après la séance",
+                    "Ajouter un exercice de battements de jambes isolé"
+                ]
+            },
+            {
+                "Title": "Endurance aquatique",
+                "Xp": 30,
+                "Description": "Tu structures ton entraînement pour gagner en endurance dans l'eau.",
+                "Subtasks": [
+                    "Introduire des intervalles de nage rapide",
+                    "Augmenter la distance totale d'une séance chaque semaine",
+                    "Alterner deux styles de nage dans une même séance"
+                ]
+            },
+            {
+                "Title": "Nageur confirmé",
+                "Xp": 35,
+                "Description": "Tu consolides ta capacité et ta régularité dans l'eau.",
+                "Subtasks": [
+                    "Comparer ton temps ou ta distance du mois à celle du départ",
+                    "Nager 1km dans une même séance",
+                    "Réinvestir ton énergie retrouvée dans un défi aquatique"
+                ]
+            },
+            {
+                "Title": "TransName",
+                "Xp": 40,
+                "Description": "Tu partages ta progression pour encourager un proche à se mettre à l'eau.",
+                "Subtasks": [
+                    "Écrire les étapes clés de ta progression en natation",
+                    "Accompagner un proche lors d'une séance piscine",
+                    "Fixer ton prochain objectif de distance"
+                ]
+            }
+        ]
+    },
+    {
+        "Theme": "Force_08",
+        "Name": "Récupération",
+        "Sentiers": [
+            {
+                "Title": "Repérage sommeil",
+                "Xp": 15,
+                "Description": "Tu observes ton sommeil et ta récupération pour comprendre leur effet sur ton corps.",
+                "Subtasks": [
+                    "Noter tes heures de coucher et de réveil pendant une semaine",
+                    "Repérer les jours où tu es le plus fatigué à l'entraînement",
+                    "Identifier les habitudes qui perturbent ton endormissement"
+                ]
+            },
+            {
+                "Title": "Rituel du soir",
+                "Xp": 20,
+                "Description": "Tu installes une routine qui favorise une meilleure récupération.",
+                "Subtasks": [
+                    "Fixer une heure de coucher régulière",
+                    "Couper les écrans 30 minutes avant de dormir",
+                    "Préparer un environnement calme et sombre pour dormir"
+                ]
+            },
+            {
+                "Title": "Première nuit test",
+                "Xp": 25,
+                "Description": "Tu testes ta nouvelle routine et observes l'effet sur ta forme.",
+                "Subtasks": [
+                    "Suivre ta routine du soir pendant 3 nuits consécutives",
+                    "Noter ta qualité de sommeil au réveil",
+                    "Ajouter une séance d'étirements légers avant de dormir"
+                ]
+            },
+            {
+                "Title": "Cycle stable",
+                "Xp": 30,
+                "Description": "Tu structures ta récupération autour de tes séances de sport.",
+                "Subtasks": [
+                    "Planifier un jour de repos complet dans la semaine",
+                    "Utiliser une technique de récupération active (marche, étirement)",
+                    "Ajuster ton coucher selon l'intensité de tes entraînements"
+                ]
+            },
+            {
+                "Title": "Corps régénéré",
+                "Xp": 35,
+                "Description": "Tu consolides une récupération qui soutient durablement ta performance.",
+                "Subtasks": [
+                    "Comparer ta qualité de sommeil du mois à celle du départ",
+                    "Tenir ta routine du soir malgré une semaine chargée",
+                    "Réinvestir ton énergie retrouvée dans une séance plus intense"
+                ]
+            },
+            {
+                "Title": "TransName",
+                "Xp": 40,
+                "Description": "Tu partages ta routine pour aider un proche à mieux récupérer.",
+                "Subtasks": [
+                    "Écrire ta routine du soir type",
+                    "Partager tes astuces avec un proche en surmenage",
+                    "Définir ta règle personnelle de récupération à long terme"
+                ]
+            }
+        ]
+    },
+    {
+        "Theme": "Force_09",
+        "Name": "Cardio",
+        "Sentiers": [
+            {
+                "Title": "Repérage endurance",
+                "Xp": 15,
+                "Description": "Tu évalues ton endurance cardiovasculaire actuelle pour fixer une base.",
+                "Subtasks": [
+                    "Réaliser un test cardio simple (montée d'escaliers, vélo, corde à sauter)",
+                    "Noter ton essoufflement et ta fréquence cardiaque ressentie",
+                    "Choisir une activité cardio qui te plaît"
+                ]
+            },
+            {
+                "Title": "Rythme régulier",
+                "Xp": 20,
+                "Description": "Tu installes des séances cardio courtes et régulières.",
+                "Subtasks": [
+                    "Planifier 2 séances cardio de 20 minutes dans la semaine",
+                    "Choisir une intensité modérée pour commencer",
+                    "Préparer ton matériel ou ton parcours à l'avance"
+                ]
+            },
+            {
+                "Title": "Premier palier",
+                "Xp": 25,
+                "Description": "Tu augmentes légèrement l'intensité pour progresser.",
+                "Subtasks": [
+                    "Ajouter 5 minutes à une séance cardio",
+                    "Introduire un intervalle plus intense pendant la séance",
+                    "Noter ta récupération après l'effort"
+                ]
+            },
+            {
+                "Title": "Souffle renforcé",
+                "Xp": 30,
+                "Description": "Tu structures ton entraînement cardio pour continuer à progresser.",
+                "Subtasks": [
+                    "Alterner deux types d'activités cardio dans la semaine",
+                    "Suivre ta fréquence cardiaque pendant l'effort",
+                    "Ajuster l'intensité selon ta forme du moment"
+                ]
+            },
+            {
+                "Title": "Endurance solide",
+                "Xp": 35,
+                "Description": "Tu consolides ta capacité cardiovasculaire sur la durée.",
+                "Subtasks": [
+                    "Comparer ta performance du mois à celle du départ",
+                    "Tenir une séance plus longue ou plus intense que d'habitude",
+                    "Réinvestir cette énergie dans une activité physique nouvelle"
+                ]
+            },
+            {
+                "Title": "TransName",
+                "Xp": 40,
+                "Description": "Tu partages ta progression pour motiver un proche à bouger davantage.",
+                "Subtasks": [
+                    "Écrire les étapes clés de ta progression cardio",
+                    "Proposer une séance cardio commune à un proche",
+                    "Fixer ton prochain objectif d'endurance"
+                ]
+            }
+        ]
+    },
+    {
+        "Theme": "Force_10",
+        "Name": "Gainage",
+        "Sentiers": [
+            {
+                "Title": "Repérage posture",
+                "Xp": 15,
+                "Description": "Tu observes ta posture et ta sangle abdominale actuelles.",
+                "Subtasks": [
+                    "Tester la durée maximale d'une planche classique",
+                    "Observer ta posture assise et debout dans la journée",
+                    "Repérer les douleurs de dos liées à un manque de gainage"
+                ]
+            },
+            {
+                "Title": "Base du gainage",
+                "Xp": 20,
+                "Description": "Tu introduis les exercices fondamentaux de renforcement du tronc.",
+                "Subtasks": [
+                    "Apprendre la position correcte de la planche",
+                    "Pratiquer 3 exercices de gainage différents",
+                    "Fixer 3 séances courtes dans la semaine"
+                ]
+            },
+            {
+                "Title": "Premier progrès",
+                "Xp": 25,
+                "Description": "Tu mesures tes premiers gains de stabilité et d'endurance du tronc.",
+                "Subtasks": [
+                    "Refaire le test de planche et comparer le temps",
+                    "Ajouter une variante latérale au gainage classique",
+                    "Noter l'amélioration de ta posture au quotidien"
+                ]
+            },
+            {
+                "Title": "Renforcement structuré",
+                "Xp": 30,
+                "Description": "Tu complexifies les exercices pour continuer à progresser.",
+                "Subtasks": [
+                    "Introduire un exercice de gainage dynamique",
+                    "Augmenter la durée ou les répétitions de chaque exercice",
+                    "Corriger ta posture consciemment plusieurs fois par jour"
+                ]
+            },
+            {
+                "Title": "Tronc solide",
+                "Xp": 35,
+                "Description": "Tu consolides une sangle abdominale forte qui protège ton dos au quotidien.",
+                "Subtasks": [
+                    "Comparer ton temps de planche du mois à celui du départ",
+                    "Tenir une posture correcte toute une journée de travail",
+                    "Réinvestir cette force dans tes autres entraînements"
+                ]
+            },
+            {
+                "Title": "TransName",
+                "Xp": 40,
+                "Description": "Tu partages ta méthode pour aider un proche à renforcer son tronc.",
+                "Subtasks": [
+                    "Créer une fiche de tes exercices de gainage préférés",
+                    "Coacher un proche sur la posture correcte de planche",
+                    "Fixer ton prochain objectif de renforcement"
+                ]
+            }
+        ]
+    }
+]
